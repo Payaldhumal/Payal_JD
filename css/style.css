@@ -8,6 +8,7 @@
   --brand: #2f66ff;
   --brand-strong: #1f4ed6;
   --shadow: 0 18px 40px -24px rgba(13, 32, 89, 0.4);
+  --project-glow: linear-gradient(120deg, rgba(47, 102, 255, 0.26), rgba(15, 219, 182, 0.2));
 }
 
 * {
@@ -20,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: radial-gradient(circle at 12% 8%, #ecf2ff 0%, #f6f8fc 42%, #eff6ff 100%);
   color: var(--text);
   font-family: "Manrope", "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -339,6 +340,36 @@ a {
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transform-origin: center bottom;
+  transition: transform 0.38s cubic-bezier(0.2, 0.7, 0, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -2;
+  background: var(--project-glow);
+  opacity: 0;
+  filter: blur(16px);
+  transition: opacity 0.35s ease;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -28%;
+  width: 44%;
+  height: 340%;
+  transform: rotate(22deg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .project-media {
@@ -347,12 +378,14 @@ a {
   overflow: hidden;
   border: 1px solid #d6dff5;
   background: #eef3ff;
+  transform: translateZ(0);
 }
 
 .project-media img {
   display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.65s cubic-bezier(0.2, 0.7, 0, 1), filter 0.65s ease;
 }
 
 .project-card h3 {
@@ -364,6 +397,17 @@ a {
   color: var(--muted);
   margin: 0.75rem 0;
   font-size: 0.94rem;
+}
+
+.resume-project-points {
+  margin: 0.1rem 0 0.95rem;
+  padding-left: 1.05rem;
+  color: #425170;
+  font-size: 0.86rem;
+}
+
+.resume-project-points li + li {
+  margin-top: 0.28rem;
 }
 
 .project-meta {
@@ -409,6 +453,44 @@ a {
   color: var(--brand-strong);
   font-weight: 700;
   font-size: 0.9rem;
+  position: relative;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.16rem;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  background: linear-gradient(90deg, #2f66ff, #16bca0);
+  transition: transform 0.3s ease;
+}
+
+.links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: #b7cbff;
+  box-shadow: 0 28px 48px -28px rgba(31, 78, 214, 0.55);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover::after {
+  animation: cardShine 1.15s ease both;
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.07);
+  filter: saturate(1.06) contrast(1.02);
 }
 
 .timeline-card {
@@ -488,22 +570,120 @@ a {
   border-color: #9db6ff;
 }
 
+.contact-form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact-status {
+  margin: 0.2rem 0 0;
+  font-size: 0.86rem;
+  font-weight: 700;
+  min-height: 1.2rem;
+}
+
+.contact-status.ok {
+  color: #0f7b49;
+}
+
+.contact-status.error {
+  color: #b42318;
+}
+
 .site-footer {
-  border-top: 1px solid var(--line);
-  padding: 1.2rem 0 2rem;
+  margin-top: 2.2rem;
+  border-top: 1px solid #d5def5;
+  background: linear-gradient(145deg, #f3f7ff 0%, #edf5ff 50%, #f7fbff 100%);
   color: var(--muted);
   font-size: 0.9rem;
 }
 
+.footer-wrap {
+  padding: 1.7rem 0 1.9rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.footer-brand {
+  padding: 0.1rem 0;
+}
+
+.footer-title {
+  margin: 0;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #1e2f57;
+}
+
+.footer-subtitle {
+  margin: 0.4rem 0 0;
+  color: #4f5f84;
+  max-width: 56ch;
+}
+
+.footer-nav,
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-nav a,
+.footer-social a {
+  color: #23417a;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.38rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid #d4e0ff;
+  background: rgba(255, 255, 255, 0.68);
+  transition: transform 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+  transform: translateY(-2px);
+  color: #16377b;
+  border-color: #a8beff;
+}
+
+.footer-bottom {
+  margin-top: 0.2rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed #c7d6fd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #516288;
+}
+
+.footer-top {
+  font-weight: 800;
+  color: #244d9f;
+  letter-spacing: 0.01em;
+}
+
+.footer-top:hover {
+  color: #14347a;
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(20px) scale(0.985);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0, 1);
+  transition-delay: calc(var(--stagger-index, 0) * 90ms);
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 @keyframes float {
@@ -513,6 +693,20 @@ a {
   }
   50% {
     transform: translateY(10px) translateX(-10px);
+  }
+}
+
+@keyframes cardShine {
+  0% {
+    transform: translateX(0) rotate(22deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(520%) rotate(22deg);
+    opacity: 0;
   }
 }
 
@@ -558,6 +752,11 @@ a {
 
   .nav.is-open {
     display: flex;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
