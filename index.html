@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payal Dhumal | Full-Stack Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Payal Dhumal, a Full-Stack Developer focused on building scalable web applications with React, Node.js, Java, and Spring Boot."
+    />
+    <meta
+      name="keywords"
+      content="Payal Dhumal, Full-Stack Developer, React.js, Node.js, Java, Spring Boot, Portfolio"
+    />
+    <meta name="author" content="Payal Dhumal" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg-decor" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="brand">Payal Dhumal</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+        <nav class="nav" id="site-nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero container section">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Full-Stack Developer</p>
+          <h1>Building scalable web products with clean architecture and business impact.</h1>
+          <p class="hero-subtext">
+            I build reliable full-stack solutions using React.js, Node.js, Java, and Spring Boot. My focus is delivering maintainable code, smooth user experiences, and measurable outcomes.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Hire Me</a>
+            <a class="btn btn-ghost" href="#projects">View Projects</a>
+            <a class="btn btn-ghost" href="PayalDhumal_Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+          </div>
+        </div>
+        <aside class="hero-panel reveal">
+          <figure class="profile-media">
+            <img
+              src="Images/payal-profile.jpg"
+              alt="Payal Dhumal professional profile photo"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://github.com/Payaldhumal.png?size=500';"
+            />
+          </figure>
+          <h2>Payal Jalindar Dhumal</h2>
+          <p>React.js | Node.js | Java | Spring Boot</p>
+          <div class="stats">
+            <article>
+              <span>CGPA</span>
+              <strong>7.10</strong>
+            </article>
+            <article>
+              <span>Internship</span>
+              <strong>Sumago Infotech</strong>
+            </article>
+            <article>
+              <span>Primary Focus</span>
+              <strong>Full-Stack Development</strong>
+            </article>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="container section">
+        <div class="section-head reveal">
+          <p>About</p>
+          <h2>Professional Summary</h2>
+        </div>
+        <p class="about-copy reveal">
+          Full-Stack Developer with hands-on experience delivering production-ready applications using React.js, Node.js, Java, and Spring Boot. I build maintainable systems, design secure REST APIs, and create responsive, business-focused user experiences with clear engineering standards.
+        </p>
+        <ul class="about-points reveal">
+          <li>Build end-to-end features from backend architecture to polished frontend delivery.</li>
+          <li>Apply API-first design, clean code principles, and scalable project structure.</li>
+          <li>Deliver professional documentation and recruiter-ready project presentations.</li>
+          <li>Collaborate effectively to ship reliable, measurable product outcomes.</li>
+        </ul>
+      </section>
+
+      <section id="skills" class="container section">
+        <div class="section-head reveal">
+          <p>Skills</p>
+          <h2>Core Technical Strengths</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="card reveal">
+            <h3>Frontend</h3>
+            <ul>
+              <li>React.js</li>
+              <li>React Hooks</li>
+              <li>Context API</li>
+              <li>HTML5, CSS3, Bootstrap</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Backend</h3>
+            <ul>
+              <li>Core Java</li>
+              <li>Spring Boot, Spring MVC, Spring Security</li>
+              <li>Node.js, Express.js</li>
+              <li>REST APIs, JWT Auth</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Databases</h3>
+            <ul>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Hibernate/JPA</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Tools</h3>
+            <ul>
+              <li>GitHub, Docker, Postman</li>
+              <li>Maven, Gradle</li>
+              <li>JUnit, Mockito</li>
+              <li>VS Code, IntelliJ IDEA, Eclipse</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="container section">
+        <div class="section-head reveal">
+          <p>Projects</p>
+          <h2>Featured Projects</h2>
+        </div>
+        <p id="projects-status" class="projects-status reveal">Loading top GitHub projects...</p>
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
+
+      <section id="experience" class="container section">
+        <div class="section-head reveal">
+          <p>Experience</p>
+          <h2>Internship</h2>
+        </div>
+        <article class="timeline-card reveal">
+          <header>
+            <h3>Full Stack Developer</h3>
+            <p>Sumago Infotech PVT LTD</p>
+            <span>Dec 2023 - Feb 2024</span>
+          </header>
+          <p>
+            Developed responsive web applications with React.js and backend services using Node.js and Express.js. Contributed to modular, scalable codebases with MongoDB integration.
+          </p>
+        </article>
+      </section>
+
+      <section id="contact" class="container section">
+        <div class="section-head reveal">
+          <p>Contact</p>
+          <h2>Let us work together</h2>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card reveal">
+            <a href="mailto:payaldhumal121@gmail.com">payaldhumal121@gmail.com</a>
+            <p>+91 8010650756</p>
+            <p>Ahilyanagar, Maharashtra</p>
+            <a href="https://www.linkedin.com/in/payal-dhumal-046bb6229" target="_blank" rel="noreferrer">linkedin.com/in/payal-dhumal-046bb6229</a>
+            <a href="https://github.com/Payaldhumal" target="_blank" rel="noreferrer">github.com/Payaldhumal</a>
+          </article>
+          <form class="contact-form reveal" onsubmit="event.preventDefault()">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>2026 Payal Dhumal. Built for recruiters and modern product teams.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const nav = document.getElementById("site-nav");
+
+      toggleBtn.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggleBtn.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("is-open");
+          toggleBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      const GITHUB_USERNAME = "Payaldhumal";
+      const MAX_RECENT_PROJECTS = 6;
+      const projectsGrid = document.getElementById("projects-grid");
+      const projectsStatus = document.getElementById("projects-status");
+
+      const fallbackProjects = [
+        {
+          name: "B-Ride: Ride-Sharing Backend System",
+          description:
+            "Designed and implemented a scalable backend architecture for a ride-sharing platform with secure APIs, role-based workflows, and reliable driver-rider coordination.",
+          tags: ["Java", "Spring Boot", "REST APIs"],
+          repoUrl: "https://github.com/Payaldhumal",
+          liveUrl: "https://github.com/Payaldhumal",
+          imageUrl: "Images/project-bride.svg",
+          stars: 0,
+          forks: 0,
+          updatedAt: new Date().toISOString(),
+        },
+        {
+          name: "E-Commerce Web Application",
+          description:
+            "Built a full-stack e-commerce application featuring product discovery, secure authentication, and cart management using a modular MERN architecture.",
+          tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
+          repoUrl: "https://github.com/Payaldhumal",
+          liveUrl: "https://github.com/Payaldhumal",
+          imageUrl: "Images/project-ecommerce.svg",
+          stars: 0,
+          forks: 0,
+          updatedAt: new Date().toISOString(),
+        },
+        {
+          name: "Employee Management System",
+          description:
+            "Developed a role-oriented employee management platform with robust CRUD workflows, structured backend logic, and maintainable data models.",
+          tags: ["Java", "Spring Boot", "MySQL"],
+          repoUrl: "https://github.com/Payaldhumal",
+          liveUrl: "https://github.com/Payaldhumal",
+          imageUrl: "https://source.unsplash.com/1200x700/?employee,dashboard,software",
+          stars: 0,
+          forks: 0,
+          updatedAt: new Date().toISOString(),
+        },
+        {
+          name: "D3 Bar Chart Visualization",
+          description:
+            "Built an interactive data visualization experience using D3.js with responsive bars, meaningful scales, and clean visual storytelling.",
+          tags: ["D3.js", "JavaScript", "Data Visualization"],
+          repoUrl: "https://github.com/Payaldhumal",
+          liveUrl: "https://github.com/Payaldhumal",
+          imageUrl: "https://source.unsplash.com/1200x700/?data,chart,analytics",
+          stars: 0,
+          forks: 0,
+          updatedAt: new Date().toISOString(),
+        },
+        {
+          name: "Fullstack Rating Application",
+          description:
+            "Created a full-stack rating platform with backend-integrated scoring logic, secure request handling, and clean frontend interactions.",
+          tags: ["React.js", "Node.js", "MongoDB"],
+          repoUrl: "https://github.com/Payaldhumal",
+          liveUrl: "https://github.com/Payaldhumal",
+          imageUrl: "https://source.unsplash.com/1200x700/?feedback,app,interface",
+          stars: 0,
+          forks: 0,
+          updatedAt: new Date().toISOString(),
+        },
+      ];
+
+      const featuredResumeProject = {
+        name: "Professional Resume Portfolio",
+        description:
+          "Designed and implemented a recruiter-focused portfolio integrating professional summary, technical strengths, internship experience, and project highlights in a responsive, production-style interface.",
+        tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "Portfolio Engineering"],
+        repoUrl: "https://github.com/Payaldhumal/Payal_JD",
+        liveUrl: "PayalDhumal_Resume.pdf",
+        imageUrl: "https://source.unsplash.com/1200x700/?resume,cv,professional",
+        stars: 0,
+        forks: 0,
+        updatedAt: new Date().toISOString(),
+      };
+
+      const resumeProjectProfessionalInfo = [
+        "Professional summary aligned with recruiter expectations",
+        "Clear skills segmentation across frontend, backend, and tools",
+        "Project storytelling with measurable engineering outcomes",
+        "Responsive layout optimized for desktop and mobile reviewers",
+      ];
+
+      const curatedProjectDescriptions = {
+        "b-ride": "Backend-focused ride-sharing solution with secure REST APIs, modular services, and scalable request handling for real-time coordination.",
+        "ride-sharing": "Backend-focused ride-sharing solution with secure REST APIs, modular services, and scalable request handling for real-time coordination.",
+        "e-commerce": "Full-stack commerce platform with authentication, catalog browsing, cart workflows, and maintainable API integrations.",
+        ecommerce: "Full-stack commerce platform with authentication, catalog browsing, cart workflows, and maintainable API integrations.",
+        portfolio: "Personal portfolio platform showcasing projects, technical strengths, and professional experience with responsive UX.",
+        internshiptask:
+          "Task-driven full-stack engineering workspace demonstrating practical implementation of UI modules, backend logic, and code organization.",
+        employeemanagementsystem:
+          "Employee management platform focused on structured data workflows, maintainable CRUD operations, and admin-oriented usability.",
+        promovies:
+          "Responsive movie browsing interface with dynamic content rendering and clean component structure for modern web experiences.",
+        photography:
+          "Portfolio website project emphasizing visual presentation, responsive layouts, and performance-aware media handling.",
+        "d3 bar chart":
+          "Interactive data visualization project using D3.js with scalable axes, tooltips, and responsive rendering of GDP trends.",
+        "fullstack rating":
+          "Full-stack rating application with feedback workflows, state management, and backend-integrated scoring logic.",
+        "electricity bill":
+          "Utility billing calculator project implementing real-world logic, clean input handling, and accurate output computation.",
+        "salary bonus":
+          "Payroll-oriented calculator for salary and bonus computation with structured business-rule conditions.",
+      };
+
+      const curatedProjectImageQueries = {
+        "b-ride": "ride sharing,mobility,city transport app",
+        "ride-sharing": "ride sharing,mobility,city transport app",
+        "e-commerce": "ecommerce,online shopping,web dashboard",
+        ecommerce: "ecommerce,online shopping,web dashboard",
+        portfolio: "developer portfolio,website design,laptop",
+        internshiptask: "software development,code editor,teamwork",
+        employeemanagementsystem: "employee dashboard,office software,analytics",
+        promovies: "cinema,movie app,streaming interface",
+        photography: "camera,creative portfolio,photo gallery",
+        "d3 bar chart": "data visualization,bar chart,analytics",
+        "fullstack rating": "feedback app,rating interface,web ui",
+        "electricity bill": "energy dashboard,electricity,calculator",
+        "salary bonus": "finance,payroll,calculator,office",
+      };
+
+      function prettifyDate(dateString) {
+        const date = new Date(dateString);
+        if (Number.isNaN(date.getTime())) return "N/A";
+        return date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+      }
+
+      function getProfessionalDescription(repoName, repoDescription) {
+        const normalized = (repoName || "").toLowerCase();
+        for (const keyword of Object.keys(curatedProjectDescriptions)) {
+          if (normalized.includes(keyword)) {
+            return curatedProjectDescriptions[keyword];
+          }
+        }
+        if (repoDescription && repoDescription.trim()) {
+          return repoDescription;
+        }
+        return `${repoName} is a production-oriented software project focused on clean implementation, maintainability, and practical product outcomes.`;
+      }
+
+      function getProjectImageUrl(repoName, fullName) {
+        const normalized = (repoName || "").toLowerCase();
+        for (const keyword of Object.keys(curatedProjectImageQueries)) {
+          if (normalized.includes(keyword)) {
+            const query = encodeURIComponent(curatedProjectImageQueries[keyword]);
+            return `https://source.unsplash.com/1200x700/?${query}`;
+          }
+        }
+        return `https://opengraph.githubassets.com/${Date.now()}/${fullName}`;
+      }
+
+      function createProjectCard(project) {
+        const article = document.createElement("article");
+        article.className = "project-card reveal";
+
+        const figure = document.createElement("figure");
+        figure.className = "project-media";
+
+        const img = document.createElement("img");
+        img.src = project.imageUrl;
+        img.alt = `Preview for ${project.name}`;
+        img.loading = "lazy";
+        img.referrerPolicy = "no-referrer";
+        img.onerror = () => {
+          if (img.src.includes("opengraph.githubassets.com")) {
+            img.src = "Images/project-ecommerce.svg";
+          }
+        };
+        figure.appendChild(img);
+
+        const title = document.createElement("h3");
+        title.textContent = project.name;
+
+        const description = document.createElement("p");
+        description.textContent = getProfessionalDescription(project.name, project.description);
+
+        let resumeInfo = null;
+        if (project.name === featuredResumeProject.name) {
+          resumeInfo = document.createElement("ul");
+          resumeInfo.className = "resume-project-points";
+          resumeProjectProfessionalInfo.forEach((point) => {
+            const li = document.createElement("li");
+            li.textContent = point;
+            resumeInfo.appendChild(li);
+          });
+        }
+
+        const tags = document.createElement("div");
+        tags.className = "tags";
+        (project.tags || []).slice(0, 5).forEach((tag) => {
+          const span = document.createElement("span");
+          span.textContent = tag;
+          tags.appendChild(span);
+        });
+
+        const links = document.createElement("div");
+        links.className = "links";
+
+        const repoLink = document.createElement("a");
+        repoLink.href = project.repoUrl;
+        repoLink.target = "_blank";
+        repoLink.rel = "noreferrer";
+        repoLink.textContent = "GitHub";
+
+        const liveLink = document.createElement("a");
+        liveLink.href = project.liveUrl;
+        liveLink.target = "_blank";
+        liveLink.rel = "noreferrer";
+        liveLink.textContent = project.liveUrl.endsWith(".pdf") ? "View Resume" : "Live Demo";
+
+        const meta = document.createElement("div");
+        meta.className = "project-meta";
+        meta.innerHTML = `
+          <span>Stars: ${project.stars ?? 0}</span>
+          <span>Forks: ${project.forks ?? 0}</span>
+          <span>Updated: ${prettifyDate(project.updatedAt)}</span>
+        `;
+
+        links.append(repoLink, liveLink);
+        article.append(figure, title, description);
+        if (resumeInfo) {
+          article.appendChild(resumeInfo);
+        }
+        article.append(tags, meta, links);
+        return article;
+      }
+
+      function renderProjects(projects) {
+        projectsGrid.innerHTML = "";
+        projects.forEach((project) => {
+          const card = createProjectCard(project);
+          projectsGrid.appendChild(card);
+          observer.observe(card);
+        });
+      }
+
+      async function loadRecentGithubProjects() {
+        try {
+          const response = await fetch(
+            `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=20`,
+            {
+              headers: {
+                Accept: "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`GitHub API error ${response.status}`);
+          }
+
+          const repos = await response.json();
+          const rankedRepos = repos
+            .filter((repo) => !repo.fork)
+            .map((repo) => {
+              const pushedAt = new Date(repo.pushed_at);
+              const daysSincePush = Math.max(0, (Date.now() - pushedAt.getTime()) / (1000 * 60 * 60 * 24));
+              const recencyBoost = Math.max(0, 30 - daysSincePush);
+              const qualityScore =
+                repo.stargazers_count * 5 +
+                repo.forks_count * 3 +
+                repo.watchers_count * 2 +
+                recencyBoost;
+
+              return { repo, qualityScore };
+            })
+            .sort((a, b) => b.qualityScore - a.qualityScore)
+            .slice(0, MAX_RECENT_PROJECTS)
+            .map(({ repo }) => ({
+              name: repo.name.replace(/[-_]/g, " "),
+              description: repo.description,
+              tags: [repo.language, ...(repo.topics || [])].filter(Boolean),
+              repoUrl: repo.html_url,
+              liveUrl: repo.homepage && repo.homepage.startsWith("http") ? repo.homepage : repo.html_url,
+              imageUrl: getProjectImageUrl(repo.name, repo.full_name),
+              stars: repo.stargazers_count,
+              forks: repo.forks_count,
+              updatedAt: repo.pushed_at,
+            }));
+
+          if (!rankedRepos.length) {
+            throw new Error("No repositories found");
+          }
+
+          renderProjects([featuredResumeProject, ...rankedRepos]);
+          projectsStatus.textContent = `Showing your professional Resume project plus top ${rankedRepos.length} recently updated GitHub projects.`;
+        } catch (error) {
+          renderProjects([featuredResumeProject, ...fallbackProjects]);
+          projectsStatus.textContent = "GitHub update is unavailable right now. Showing your professional featured and fallback projects.";
+        }
+      }
+
+      loadRecentGithubProjects();
+    </script>
+  </body>
+</html>
